@@ -4,8 +4,6 @@
 class Solution {
 public:
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
-        sort(candidates.begin(), candidates.end());
-        
         vector<vector<int>> result;
         vector<int> curr;
         
@@ -22,7 +20,7 @@ public:
         
         for(int i = start;i < candidates.size();i ++) {
             if(candidates[i] > target) {
-                break;
+                continue;
             }
             
             curr.push_back(candidates[i]);
